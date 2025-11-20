@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vairam Edible Oils - Pure & Natural Oils</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary-red: #c62828;
+            --dark-red: #8e0000;
+            --light-red: #ff5f52;
+            --silver-grey: #f5f5f5;
+            --dark-grey: #424242;
+            --medium-grey: #757575;
+            --white: #ffffff;
+            --black: #212121;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--silver-grey);
+            color: var(--black);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            margin-right: 15px;
+            object-fit: cover;
+            border: 2px solid var(--primary-red);
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            color: var(--primary-red);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--black);
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover, 
+        nav ul li a.active {
+            background-color: var(--primary-red);
+            color: var(--white);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-red);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), 
+                        url('vairam1.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            text-align: center;
+            color: var(--white);
+        }
+        
+        .hero h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-red);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: var(--dark-red);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn:disabled {
+            background-color: var(--medium-grey);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        /* Page Content */
+        .page {
+            display: none;
+            padding: 60px 0;
+        }
+        
+        .page.active {
+            display: block;
+        }
+        
+        .page-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--black);
+        }
+        
+        .page-title h2 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            color: var(--primary-red);
+        }
+        
+        .page-title p {
+            font-size: 1.1rem;
+            color: var(--medium-grey);
+        }
+        
+        /* Home Page */
+        .about-section {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .about-section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary-red);
+        }
+        
+        .about-section p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .vision-mission {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .vision-card, .mission-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--primary-red);
+        }
+        
+        .vision-card h3, .mission-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-red);
+        }
+        
+        .mission-card ul {
+            padding-left: 20px;
+        }
+        
+        .mission-card ul li {
+            margin-bottom: 10px;
+        }
+        
+        .usp-section {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .usp-section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary-red);
+            text-align: center;
+        }
+        
+        .usp-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .usp-item {
+            padding: 15px;
+            border-left: 3px solid var(--primary-red);
+            background-color: var(--silver-grey);
+        }
+        
+        .usp-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--dark-red);
+        }
+        
+        /* Products Page */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            border-top: 4px solid var(--primary-red);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .product-img {
+            height: 200px;
+            background-color: var(--silver-grey);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .product-card:hover .product-img img {
+            transform: scale(1.05);
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary-red);
+        }
+        
+        .product-info p {
+            color: var(--medium-grey);
+            margin-bottom: 15px;
+        }
+        
+        .quantities {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .quantity-tag {
+            background-color: var(--silver-grey);
+            color: var(--dark-grey);
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid var(--primary-red);
+        }
+        
+        /* Contact Page */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .contact-info {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid var(--primary-red);
+        }
+        
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-red);
+        }
+        
+        .contact-item {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        
+        .contact-item i {
+            font-size: 1.2rem;
+            color: var(--primary-red);
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+        
+        .contact-form {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid var(--primary-red);
+        }
+        
+        .contact-form h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-red);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark-grey);
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--silver-grey);
+            border-radius: 5px;
+            font-size: 1rem;
+            background-color: var(--silver-grey);
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-red);
+        }
+        
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .form-message {
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 15px;
+            text-align: center;
+            font-weight: 600;
+            display: none;
+        }
+        
+        .form-message.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            display: block;
+        }
+        
+        .form-message.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            display: block;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-red);
+            color: var(--white);
+            padding: 40px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 50px;
+            height: 2px;
+            background-color: var(--white);
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col ul li a {
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-col ul li a:hover {
+            color: var(--silver-grey);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--light-red);
+            border-radius: 50%;
+            margin-right: 10px;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--white);
+            color: var(--primary-red);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.9rem;
+        }
+        
+        .fssai-info {
+            background-color: var(--white);
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            color: var(--dark-grey);
+            font-size: 0.9rem;
+        }
+        
+        .fssai-info h4 {
+            color: var(--primary-red);
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                margin-bottom: 15px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            nav ul li {
+                margin: 5px 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .quantities {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <!-- Replace with your square logo image -->
+                <img src="logo.png" alt="VAIRAM" class="logo-img">
+                <h1>VAIRAM - Edible Oils</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="nav-link active" data-page="home">Home</a></li>
+                    <li><a href="#" class="nav-link" data-page="products">Products</a></li>
+                    <li><a href="#" class="nav-link" data-page="contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Pure & Natural Edible Oils</h2>
+            <p>Where tradition meets excellence. We bring you oils that are not just pure but also packed with the goodness of nature.</p>
+            <a href="#" class="btn nav-link" data-page="products">View Our Products</a>
+        </div>
+    </section>
+
+    <!-- Home Page -->
+    <section id="home" class="page active">
+        <div class="container">
+            <div class="about-section">
+                <h3>About Us</h3>
+                <p>Welcome to <strong>Vairam Edible Oils</strong>, where tradition meets excellence. We are committed to providing you with oils that are not just pure but also packed with the goodness of nature. Using traditional manufacturing methods like wood-pressing and machine-pressing, we ensure that every drop of oil retains its natural nutrients, aroma, and flavor.</p>
+                <p>Our journey began with a passion for promoting healthy and sustainable lifestyles, and we take pride in being a trusted name for high-quality edible oils that deliver both taste and wellness to your family.</p>
+                <p>We are a dedicated team of professionals with a shared vision of bringing purity and authenticity to your kitchen. Rooted in tradition and driven by innovation, we specialize in producing edible oils that are true to their natural origins.</p>
+            </div>
+            
+            <div class="vision-mission">
+                <div class="vision-card">
+                    <h3>Our Vision</h3>
+                    <p>To be a household name across South India for high-quality, pure, and natural edible oils. By setting new standards in the industry, we aim to revolutionize how people perceive and consume cooking oils, blending traditional wisdom with modern practices.</p>
+                    <p>We envision expanding our footprint across the region, creating a trusted brand that stands for health, authenticity, and sustainability.</p>
+                </div>
+                
+                <div class="mission-card">
+                    <h3>Our Mission</h3>
+                    <ul>
+                        <li>Produce and deliver oils that uphold the highest standards of purity, quality, and nutrition.</li>
+                        <li>Preserve traditional oil-extraction methods while incorporating innovative practices for efficiency and sustainability.</li>
+                        <li>Support local farmers by sourcing premium raw materials and promoting eco-friendly agriculture.</li>
+                        <li>Promote healthier lifestyles by offering oils free from chemicals and artificial additives.</li>
+                    </ul>
+                    <p>We are committed to building a brand that resonates with trust and care, ensuring that every bottle carries the essence of health and tradition.</p>
+                </div>
+            </div>
+            
+            <div class="usp-section">
+                <h3>What Sets Us Apart</h3>
+                <div class="usp-grid">
+                    <div class="usp-item">
+                        <h4>Unmatched Purity</h4>
+                        <p>Our oils are 100% natural, with no chemicals, artificial flavors, or additives.</p>
+                    </div>
+                    <div class="usp-item">
+                        <h4>Traditional Techniques</h4>
+                        <p>By using wood-pressed and machine-pressed methods, we retain the oil's natural nutrients and enhance its flavor.</p>
+                    </div>
+                    <div class="usp-item">
+                        <h4>Nutrient-Rich Products</h4>
+                        <p>Each drop of oil is packed with essential vitamins and minerals, promoting overall health and well-being.</p>
+                    </div>
+                    <div class="usp-item">
+                        <h4>Sustainability</h4>
+                        <p>We are committed to eco-friendly practices, from sustainable sourcing to environmentally conscious production methods.</p>
+                    </div>
+                    <div class="usp-item">
+                        <h4>Local Empowerment</h4>
+                        <p>By collaborating with local farmers and communities, we ensure fair trade practices and contribute to rural development.</p>
+                    </div>
+                    <div class="usp-item">
+                        <h4>Consistency in Quality</h4>
+                        <p>Every bottle undergoes rigorous quality checks to ensure it meets the highest standards of excellence.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Page -->
+    <section id="products" class="page">
+        <div class="container">
+            <div class="page-title">
+                <h2>Our Products</h2>
+                <p>High-quality edible oils for your health and culinary needs</p>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-img">
+                        <!-- Replace with your product image -->
+                        <img src="coldgroundnut.jpg" alt="Cold Pressed Groundnut Oil">
+                    </div>
+                    <div class="product-info">
+                        <h3>Cold Pressed Groundnut Oil</h3>
+                        <p>Extracted using traditional wood-pressing techniques to retain natural flavor, aroma, and nutrients. Rich in monounsaturated fats.</p>
+                        <div class="quantities">
+                            <span class="quantity-tag">100ml</span>
+                            <span class="quantity-tag">250ml</span>
+                            <span class="quantity-tag">500ml</span>
+                            <span class="quantity-tag">1L</span>
+                            <span class="quantity-tag">5L</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-img">
+                        <!-- Replace with your product image -->
+                        <img src="groundnut.jpg" alt="Groundnut Oil">
+                    </div>
+                    <div class="product-info">
+                        <h3>Groundnut Oil</h3>
+                        <p>Crafted using machine-pressed techniques. With a high smoke point, excellent for deep frying and cooking.</p>
+                        <div class="quantities">
+                            <span class="quantity-tag">100ml</span>
+                            <span class="quantity-tag">250ml</span>
+                            <span class="quantity-tag">500ml</span>
+                            <span class="quantity-tag">1L</span>
+                            <span class="quantity-tag">5L</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-img">
+                        <!-- Replace with your product image -->
+                        <img src="coconut.jpg" alt="Coconut Oil">
+                    </div>
+                    <div class="product-info">
+                        <h3>Coconut Oil</h3>
+                        <p>Made from high-quality coconuts. Multipurpose oil for cooking, skin care, and hair care.</p>
+                        <div class="quantities">
+                            <span class="quantity-tag">100ml</span>
+                            <span class="quantity-tag">250ml</span>
+                            <span class="quantity-tag">500ml</span>
+                            <span class="quantity-tag">1L</span>
+                            <span class="quantity-tag">5L</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-img">
+                        <!-- Replace with your product image -->
+                        <img src="coconut.jpg" alt="Special Cold Pressed Coconut Oil">
+                    </div>
+                    <div class="product-info">
+                        <h3>Special Cold Pressed Coconut Oil</h3>
+                        <p>Extracted through traditional, unheated process to preserve natural nutrients, aroma, and texture.</p>
+                        <div class="quantities">
+                            <span class="quantity-tag">100ml</span>
+                            <span class="quantity-tag">250ml</span>
+                            <span class="quantity-tag">500ml</span>
+                            <span class="quantity-tag">1L</span>
+                            <span class="quantity-tag">5L</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-img">
+                        <!-- Replace with your product image -->
+                        <img src="sesame.jpg" alt="Sesame Oil">
+                    </div>
+                    <div class="product-info">
+                        <h3>Sesame Oil</h3>
+                        <p>Made from premium sesame seeds using machine-pressed method. Rich in antioxidants and essential fatty acids.</p>
+                        <div class="quantities">
+                            <span class="quantity-tag">100ml</span>
+                            <span class="quantity-tag">250ml</span>
+                            <span class="quantity-tag">500ml</span>
+                            <span class="quantity-tag">1L</span>
+                            <span class="quantity-tag">5L</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-img">
+                        <!-- Replace with your product image -->
+                        <img src="coldsesame.jpg" alt="Cold Pressed Jaggery Added Sesame Oil">
+                    </div>
+                    <div class="product-info">
+                        <h3>Cold Pressed Jaggery Added Sesame Oil</h3>
+                        <p>Unique blend of sesame oil with natural sweetness of jaggery. Perfect for South Indian delicacies.</p>
+                        <div class="quantities">
+                            <span class="quantity-tag">100ml</span>
+                            <span class="quantity-tag">250ml</span>
+                            <span class="quantity-tag">500ml</span>
+                            <span class="quantity-tag">1L</span>
+                            <span class="quantity-tag">5L</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-img">
+                        <!-- Replace with your product image -->
+                        <img src="castor.jpg" alt="Castor Oil">
+                    </div>
+                    <div class="product-info">
+                        <h3>Castor Oil</h3>
+                        <p>Versatile, 100% natural product known for medicinal and therapeutic properties. Perfect for skin and hair care.</p>
+                        <div class="quantities">
+                            <span class="quantity-tag">100ml</span>
+                            <span class="quantity-tag">250ml</span>
+                            <span class="quantity-tag">500ml</span>
+                            <span class="quantity-tag">1L</span>
+                            <span class="quantity-tag">5L</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Page -->
+    <section id="contact" class="page">
+        <div class="container">
+            <div class="page-title">
+                <h2>Contact Us</h2>
+                <p>Get in touch with our team for inquiries and orders</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Manufactured by: Lakshmi Oil Mills</h4>
+                            <p>No. 3/67-C, Karuvalur Road, Kaduvettipalayam, Sulur (Tk), Coimbatore, TamilNadu – 641659</p>
+                            <div class="fssai-info">
+                                <h4>FSSAI License Number</h4>
+                                <p>12422003001326</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Packaged & Marketed by: Lakshmi Traders</h4>
+                            <p>No 2, Gandhi Road, Anupparpalayam, Tirupur, Tamil Nadu-641652</p>
+                            <div class="fssai-info">
+                                <h4>FSSAI License Number</h4>
+                                <p>12424027001145</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone Numbers</h4>
+                            <p>9790591222, 9943711222, 9047011222</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email Address</h4>
+                            <p>lakshmitraderslom@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Your Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        
+                        <div class="form-message" id="formMessage"></div>
+                        
+                        <button type="submit" class="btn" id="submitBtn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Vairam Edible Oils</h3>
+                    <p>Leading provider of pure and natural edible oils with traditional extraction methods and exceptional quality.</p>
+                    
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#" class="nav-link" data-page="home">Home</a></li>
+                        <li><a href="#" class="nav-link" data-page="products">Products</a></li>
+                        <li><a href="#" class="nav-link" data-page="contact">Contact</a></li>
+                        <li><a href="#">About Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Our Products</h3>
+                    <ul>
+                        <li><a href="#">Cold Pressed Groundnut Oil</a></li>
+                        <li><a href="#">Groundnut Oil</a></li>
+                        <li><a href="#">Coconut Oil</a></li>
+                        <li><a href="#">Sesame Oil</a></li>
+                        <li><a href="#">Castor Oil</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> 9790591222</li>
+                        <li><i class="fas fa-envelope"></i> lakshmitraderslom@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Tiruppur, Tamil Nadu</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Vairam Edible Oils. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const pages = document.querySelectorAll('.page');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const nav = document.querySelector('nav ul');
+            
+            // Page navigation
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetPage = this.getAttribute('data-page');
+                    
+                    // Update active nav link
+                    navLinks.forEach(link => link.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Show target page
+                    pages.forEach(page => {
+                        page.classList.remove('active');
+                        if (page.id === targetPage) {
+                            page.classList.add('active');
+                        }
+                    });
+                    
+                    // Close mobile menu if open
+                    if (nav.classList.contains('active')) {
+                        nav.classList.remove('active');
+                    }
+                });
+            });
+            
+            // Mobile menu toggle
+            mobileMenu.addEventListener('click', function() {
+                nav.classList.toggle('active');
+            });
+            
+            // Contact form submission
+            const contactForm = document.getElementById('contactForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const formMessage = document.getElementById('formMessage');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    
+                    // Disable submit button and show loading state
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Sending...';
+                    
+                    // Get form data
+                    const formData = new FormData(this);
+                    const data = {
+                        name: formData.get('name'),
+                        email: formData.get('email'),
+                        phone: formData.get('phone'),
+                        subject: formData.get('subject'),
+                        message: formData.get('message')
+                    };
+                    
+                    try {
+                        // Using EmailJS service to send email
+                        // You'll need to set up an account at https://www.emailjs.com/
+                        // And replace these with your actual EmailJS credentials
+                        const serviceID = 'service_kw9gx0l';
+                        const templateID = 'template_f16gcht';
+                        const userID = 'mjQIVMFOQO2bSNJjL';
+                        
+                        // Send email using EmailJS
+                        await emailjs.send(serviceID, templateID, {
+                            to_email: 'lakshmitraderslom@gmail.com',
+                            from_name: data.name,
+                            from_email: data.email,
+                            phone: data.phone,
+                            subject: data.subject,
+                            message: data.message
+                        }, userID);
+                        
+                        // Show success message
+                        formMessage.textContent = 'Thank you for your message! We will get back to you soon.';
+                        formMessage.className = 'form-message success';
+                        
+                        // Reset form
+                        this.reset();
+                        
+                    } catch (error) {
+                        console.error('Error sending email:', error);
+                        
+                        // Show error message
+                        formMessage.textContent = 'Sorry, there was an error sending your message. Please try again or contact us directly at lakshmitraderslom@gmail.com';
+                        formMessage.className = 'form-message error';
+                    } finally {
+                        // Re-enable submit button
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = 'Send Message';
+                        
+                        // Hide message after 5 seconds
+                        setTimeout(() => {
+                            formMessage.style.display = 'none';
+                        }, 5000);
+                    }
+                });
+            }
+        });
+    </script>
+    
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        // Initialize EmailJS with your user ID
+        // You can get this from your EmailJS dashboard
+        emailjs.init('lakshmitraderslom@gmail.com');
+    </script>
+</body>
+</html>
